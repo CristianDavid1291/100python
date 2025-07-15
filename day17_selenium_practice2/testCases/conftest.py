@@ -5,4 +5,5 @@ import pytest
 def setup():
     driver = webdriver.Chrome()
     driver.get("https://www.saucedemo.com/")
-    return driver
+    yield
+    driver.close()
